@@ -1,0 +1,3661 @@
+{
+  "contractName": "Main",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "addShop",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "addReviewer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getShopNumber",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "reviewee",
+          "type": "string"
+        },
+        {
+          "name": "score",
+          "type": "uint256"
+        },
+        {
+          "name": "comment",
+          "type": "string"
+        }
+      ],
+      "name": "addReview",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"name\",\"type\":\"string\"}],\"name\":\"addShop\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getShopNumber\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"reviewee\",\"type\":\"string\"},{\"name\":\"score\",\"type\":\"uint256\"},{\"name\":\"comment\",\"type\":\"string\"}],\"name\":\"addReview\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"name\",\"type\":\"string\"}],\"name\":\"addReviewer\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/admin/Desktop/Reviews/contracts/Main.sol\":\"Main\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/admin/Desktop/Reviews/contracts/Main.sol\":{\"keccak256\":\"0x81a9d614f4dd0a4e02261e20e2b0867d9765fb8e21d94f66e237aefaa46f884d\",\"urls\":[\"bzzr://e297240fd639b113b3edeefbe792bef31798975fcfb9fb9f8fc356502c1b40fa\"]}},\"version\":1}",
+  "bytecode": "0x608060405260008055600060025534801561001957600080fd5b506109dd806100296000396000f3fe608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630c1fa2bc1461006757806394688dea1461012f578063a65ef9f01461015a578063a9ccf5c4146102c3575b600080fd5b34801561007357600080fd5b5061012d6004803603602081101561008a57600080fd5b81019080803590602001906401000000008111156100a757600080fd5b8201836020820111156100b957600080fd5b803590602001918460018302840111640100000000831117156100db57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061038b565b005b34801561013b57600080fd5b506101446104ba565b6040518082815260200191505060405180910390f35b34801561016657600080fd5b506102c16004803603606081101561017d57600080fd5b810190808035906020019064010000000081111561019a57600080fd5b8201836020820111156101ac57600080fd5b803590602001918460018302840111640100000000831117156101ce57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291908035906020019064010000000081111561023b57600080fd5b82018360208201111561024d57600080fd5b8035906020019184600183028401116401000000008311171561026f57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506104c3565b005b3480156102cf57600080fd5b50610389600480360360208110156102e657600080fd5b810190808035906020019064010000000081111561030357600080fd5b82018360208201111561031557600080fd5b8035906020019184600183028401116401000000008311171561033757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610756565b005b61039361086c565b606060405190810160405280600081526020018381526020013373ffffffffffffffffffffffffffffffffffffffff168152509050806001836040518082805190602001908083835b60208310151561040157805182526020820191506020810190506020830392506103dc565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060008201518160000155602082015181600101908051906020019061045a9291906108a4565b5060408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555090505060008081548092919060010191905055505050565b60008054905090565b6104cb610924565b600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206080604051908101604052908160008201548152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105b95780601f1061058e576101008083540402835291602001916105b9565b820191906000526020600020905b81548152906001019060200180831161059c57829003601f168201915b50505050508152602001600282015481526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681525050905061062c610963565b608060405190810160405280858152602001868152602001836020015181526020018481525090506004856040518082805190602001908083835b60208310151561068c5780518252602082019150602081019050602083039250610667565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902081908060018154018082558091505090600182039060005260206000209060040201600090919290919091506000820151816000015560208201518160010190805190602001906107119291906108a4565b50604082015181600201908051906020019061072e9291906108a4565b50606082015181600301908051906020019061074b9291906108a4565b505050505050505050565b61075e610924565b6080604051908101604052806000815260200183815260200160025481526020013373ffffffffffffffffffffffffffffffffffffffff16815250905080600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000820151816000015560208201518160010190805190602001906108019291906108a4565b506040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050506002600081548092919060010191905055505050565b6060604051908101604052806000815260200160608152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106108e557805160ff1916838001178555610913565b82800160010185558215610913579182015b828111156109125782518255916020019190600101906108f7565b5b509050610920919061098c565b5090565b608060405190810160405280600081526020016060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b608060405190810160405280600081526020016060815260200160608152602001606081525090565b6109ae91905b808211156109aa576000816000905550600101610992565b5090565b9056fea165627a7a72305820962205b8d29bb0694fb8fc120430d21dce2cd75571253625a6847f3646fc6c170029",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680630c1fa2bc1461006757806394688dea1461012f578063a65ef9f01461015a578063a9ccf5c4146102c3575b600080fd5b34801561007357600080fd5b5061012d6004803603602081101561008a57600080fd5b81019080803590602001906401000000008111156100a757600080fd5b8201836020820111156100b957600080fd5b803590602001918460018302840111640100000000831117156100db57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f82011690508083019250505050505050919291929050505061038b565b005b34801561013b57600080fd5b506101446104ba565b6040518082815260200191505060405180910390f35b34801561016657600080fd5b506102c16004803603606081101561017d57600080fd5b810190808035906020019064010000000081111561019a57600080fd5b8201836020820111156101ac57600080fd5b803590602001918460018302840111640100000000831117156101ce57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291908035906020019064010000000081111561023b57600080fd5b82018360208201111561024d57600080fd5b8035906020019184600183028401116401000000008311171561026f57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506104c3565b005b3480156102cf57600080fd5b50610389600480360360208110156102e657600080fd5b810190808035906020019064010000000081111561030357600080fd5b82018360208201111561031557600080fd5b8035906020019184600183028401116401000000008311171561033757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610756565b005b61039361086c565b606060405190810160405280600081526020018381526020013373ffffffffffffffffffffffffffffffffffffffff168152509050806001836040518082805190602001908083835b60208310151561040157805182526020820191506020810190506020830392506103dc565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060008201518160000155602082015181600101908051906020019061045a9291906108a4565b5060408201518160020160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555090505060008081548092919060010191905055505050565b60008054905090565b6104cb610924565b600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206080604051908101604052908160008201548152602001600182018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105b95780601f1061058e576101008083540402835291602001916105b9565b820191906000526020600020905b81548152906001019060200180831161059c57829003601f168201915b50505050508152602001600282015481526020016003820160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681525050905061062c610963565b608060405190810160405280858152602001868152602001836020015181526020018481525090506004856040518082805190602001908083835b60208310151561068c5780518252602082019150602081019050602083039250610667565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902081908060018154018082558091505090600182039060005260206000209060040201600090919290919091506000820151816000015560208201518160010190805190602001906107119291906108a4565b50604082015181600201908051906020019061072e9291906108a4565b50606082015181600301908051906020019061074b9291906108a4565b505050505050505050565b61075e610924565b6080604051908101604052806000815260200183815260200160025481526020013373ffffffffffffffffffffffffffffffffffffffff16815250905080600360003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000820151816000015560208201518160010190805190602001906108019291906108a4565b506040820151816002015560608201518160030160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055509050506002600081548092919060010191905055505050565b6060604051908101604052806000815260200160608152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106108e557805160ff1916838001178555610913565b82800160010185558215610913579182015b828111156109125782518255916020019190600101906108f7565b5b509050610920919061098c565b5090565b608060405190810160405280600081526020016060815260200160008152602001600073ffffffffffffffffffffffffffffffffffffffff1681525090565b608060405190810160405280600081526020016060815260200160608152602001606081525090565b6109ae91905b808211156109aa576000816000905550600101610992565b5090565b9056fea165627a7a72305820962205b8d29bb0694fb8fc120430d21dce2cd75571253625a6847f3646fc6c170029",
+  "sourceMap": "26:1180:0:-;;;338:1;322:17;;416:1;396:21;;26:1180;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:1180:0;;;;;;;",
+  "deployedSourceMap": "26:1180:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;490:131;;8:9:-1;5:2;;;30:1;27;20:12;5:2;490:131:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;490:131:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;490:131:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;490:131:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;490:131:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;490:131:0;;;;;;;;;;;;;;;;;;799:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;799:78:0;;;;;;;;;;;;;;;;;;;;;;;953:251;;8:9:-1;5:2;;;30:1;27;20:12;5:2;953:251:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;953:251:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;953:251:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;953:251:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;953:251:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;953:251:0;;;;;;;;;;;;;;;;;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;953:251:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;953:251:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;953:251:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;953:251:0;;;;;;;;;;;;;;;;;;625:170;;8:9:-1;5:2;;;30:1;27;20:12;5:2;625:170:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;625:170:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;625:170:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;625:170:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;625:170:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;625:170:0;;;;;;;;;;;;;;;;;;490:131;540:13;;:::i;:::-;556:23;;;;;;;;;561:1;556:23;;;;563:4;556:23;;;;568:10;556:23;;;;;540:39;;599:1;585:5;591:4;585:11;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;585:11:0;;;;;;;;;;;;;;;;;;;;;:15;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;606:8;;:10;;;;;;;;;;;;;490:131;;:::o;799:78::-;845:4;864:8;;857:15;;799:78;:::o;953:251::-;1046:19;;:::i;:::-;1068:9;:21;1078:10;1068:21;;;;;;;;;;;;;;;1046:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1097:20;;:::i;:::-;1120:39;;;;;;;;;1127:5;1120:39;;;;1133:8;1120:39;;;;1142:3;:8;;;1120:39;;;;1151:7;1120:39;;;1097:62;;1167:9;1177:8;1167:19;;;;;;;;;;;;;36:153:-1;66:2;61:3;58:11;51:19;36:153;;;182:3;176:10;171:3;164:23;98:2;93:3;89:12;82:19;;123:2;118:3;114:12;107:19;;148:2;143:3;139:12;132:19;;36:153;;;274:1;267:3;263:2;259:12;254:3;250:22;246:30;315:4;311:9;305:3;299:10;295:26;356:4;350:3;344:10;340:21;389:7;380;377:20;372:3;365:33;3:399;;;1167:19:0;;;;;;;;;;;;;;;;;;;;;1192:6;1167:32;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;1167:32:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;953:251;;;;;:::o;625:170::-;679:17;;:::i;:::-;699:40;;;;;;;;;708:1;699:40;;;;710:4;699:40;;;;715:12;;699:40;;;;728:10;699:40;;;;;679:60;;769:1;745:9;:21;755:10;745:21;;;;;;;;;;;;;;;:25;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;776:12;;:14;;;;;;;;;;;;;625:170;;:::o;26:1180::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\n\ncontract Main {\n\n  struct Shop {\n    uint score;\n    string name;\n    address owner;\n  }\n\n  struct Reviewer {\n    uint score;\n    string name;\n    uint reviewerId;\n    address sender;\n  }\n\n  struct Review {\n    uint score;\n    string shopName;\n    string reviewerName;\n    string comment;\n  }\n\n  uint shopSize = 0;\n\n  //name <-> shop\n  mapping(string => Shop) Shops;\n\n  uint reviewerSize = 0;\n\n  //address <-> reviewer\n  mapping(address => Reviewer) reviewers;\n\n  function addShop(string memory name) public {\n    Shop memory s = Shop(0,name,msg.sender);\n    Shops[name] = s;\n    shopSize++;\n  }\n\n  function addReviewer(string memory name) public {\n    Reviewer memory r = Reviewer(0,name,reviewerSize,msg.sender);\n    reviewers[msg.sender] = r;\n    reviewerSize++;\n  }\n\n  function getShopNumber() public view returns (uint) {\n    return shopSize;\n  }\n\n  //shop name <-> review list\n  mapping(string => Review[]) reviewMap;\n\n  function addReview(string memory reviewee, uint score, string memory comment) public {\n      Reviewer memory rer = reviewers[msg.sender];\n      Review memory review = Review(score,reviewee,rer.name,comment);\n      reviewMap[reviewee].push(review);\n  }\n}\n",
+  "sourcePath": "/Users/admin/Desktop/Reviews/contracts/Main.sol",
+  "ast": {
+    "absolutePath": "/Users/admin/Desktop/Reviews/contracts/Main.sol",
+    "exportedSymbols": {
+      "Main": [
+        138
+      ]
+    },
+    "id": 139,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 138,
+        "linearizedBaseContracts": [
+          138
+        ],
+        "name": "Main",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Main.Shop",
+            "id": 8,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "score",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "63:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "63:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "79:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "79:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "owner",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "96:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "96:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Shop",
+            "nodeType": "StructDefinition",
+            "scope": 138,
+            "src": "45:69:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Main.Reviewer",
+            "id": 17,
+            "members": [
+              {
+                "constant": false,
+                "id": 10,
+                "name": "score",
+                "nodeType": "VariableDeclaration",
+                "scope": 17,
+                "src": "140:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "140:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 12,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 17,
+                "src": "156:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "156:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14,
+                "name": "reviewerId",
+                "nodeType": "VariableDeclaration",
+                "scope": 17,
+                "src": "173:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 13,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "173:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 16,
+                "name": "sender",
+                "nodeType": "VariableDeclaration",
+                "scope": 17,
+                "src": "194:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 15,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "194:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Reviewer",
+            "nodeType": "StructDefinition",
+            "scope": 138,
+            "src": "118:95:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Main.Review",
+            "id": 26,
+            "members": [
+              {
+                "constant": false,
+                "id": 19,
+                "name": "score",
+                "nodeType": "VariableDeclaration",
+                "scope": 26,
+                "src": "237:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 18,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "237:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "shopName",
+                "nodeType": "VariableDeclaration",
+                "scope": 26,
+                "src": "253:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 20,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "253:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 23,
+                "name": "reviewerName",
+                "nodeType": "VariableDeclaration",
+                "scope": 26,
+                "src": "274:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 22,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "274:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 25,
+                "name": "comment",
+                "nodeType": "VariableDeclaration",
+                "scope": 26,
+                "src": "299:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 24,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "299:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Review",
+            "nodeType": "StructDefinition",
+            "scope": 138,
+            "src": "217:101:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 29,
+            "name": "shopSize",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "322:17:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 27,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "322:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 28,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "338:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 33,
+            "name": "Shops",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "362:29:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Shop_$8_storage_$",
+              "typeString": "mapping(string => struct Main.Shop)"
+            },
+            "typeName": {
+              "id": 32,
+              "keyType": {
+                "id": 30,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "370:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "362:23:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Shop_$8_storage_$",
+                "typeString": "mapping(string => struct Main.Shop)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 31,
+                "name": "Shop",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 8,
+                "src": "380:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Shop_$8_storage_ptr",
+                  "typeString": "struct Main.Shop"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 36,
+            "name": "reviewerSize",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "396:21:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 34,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "396:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 35,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "416:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 40,
+            "name": "reviewers",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "447:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Reviewer_$17_storage_$",
+              "typeString": "mapping(address => struct Main.Reviewer)"
+            },
+            "typeName": {
+              "id": 39,
+              "keyType": {
+                "id": 37,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "455:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "447:28:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Reviewer_$17_storage_$",
+                "typeString": "mapping(address => struct Main.Reviewer)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 38,
+                "name": "Reviewer",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 17,
+                "src": "466:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Reviewer_$17_storage_ptr",
+                  "typeString": "struct Main.Reviewer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 63,
+              "nodeType": "Block",
+              "src": "534:87:0",
+              "statements": [
+                {
+                  "assignments": [
+                    46
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 46,
+                      "name": "s",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 63,
+                      "src": "540:13:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Shop_$8_memory_ptr",
+                        "typeString": "struct Main.Shop"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 45,
+                        "name": "Shop",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8,
+                        "src": "540:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Shop_$8_storage_ptr",
+                          "typeString": "struct Main.Shop"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 53,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 48,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "561:1:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 49,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 42,
+                        "src": "563:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 50,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 210,
+                          "src": "568:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 51,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "568:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 47,
+                      "name": "Shop",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "556:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Shop_$8_storage_ptr_$",
+                        "typeString": "type(struct Main.Shop storage pointer)"
+                      }
+                    },
+                    "id": 52,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "556:23:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Shop_$8_memory",
+                      "typeString": "struct Main.Shop memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "540:39:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 58,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 54,
+                        "name": "Shops",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 33,
+                        "src": "585:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Shop_$8_storage_$",
+                          "typeString": "mapping(string memory => struct Main.Shop storage ref)"
+                        }
+                      },
+                      "id": 56,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 55,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 42,
+                        "src": "591:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "585:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Shop_$8_storage",
+                        "typeString": "struct Main.Shop storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 57,
+                      "name": "s",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46,
+                      "src": "599:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Shop_$8_memory_ptr",
+                        "typeString": "struct Main.Shop memory"
+                      }
+                    },
+                    "src": "585:15:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Shop_$8_storage",
+                      "typeString": "struct Main.Shop storage ref"
+                    }
+                  },
+                  "id": 59,
+                  "nodeType": "ExpressionStatement",
+                  "src": "585:15:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 61,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "606:10:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 60,
+                      "name": "shopSize",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "606:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 62,
+                  "nodeType": "ExpressionStatement",
+                  "src": "606:10:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 64,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addShop",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 43,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64,
+                  "src": "507:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 41,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "506:20:0"
+            },
+            "returnParameters": {
+              "id": 44,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:0:0"
+            },
+            "scope": 138,
+            "src": "490:131:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 89,
+              "nodeType": "Block",
+              "src": "673:122:0",
+              "statements": [
+                {
+                  "assignments": [
+                    70
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 70,
+                      "name": "r",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 89,
+                      "src": "679:17:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reviewer_$17_memory_ptr",
+                        "typeString": "struct Main.Reviewer"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 69,
+                        "name": "Reviewer",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 17,
+                        "src": "679:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Reviewer_$17_storage_ptr",
+                          "typeString": "struct Main.Reviewer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 78,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 72,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "708:1:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 73,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 66,
+                        "src": "710:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 74,
+                        "name": "reviewerSize",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36,
+                        "src": "715:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 75,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 210,
+                          "src": "728:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 76,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "728:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 71,
+                      "name": "Reviewer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "699:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Reviewer_$17_storage_ptr_$",
+                        "typeString": "type(struct Main.Reviewer storage pointer)"
+                      }
+                    },
+                    "id": 77,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "699:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Reviewer_$17_memory",
+                      "typeString": "struct Main.Reviewer memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "679:60:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 84,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 79,
+                        "name": "reviewers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 40,
+                        "src": "745:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Reviewer_$17_storage_$",
+                          "typeString": "mapping(address => struct Main.Reviewer storage ref)"
+                        }
+                      },
+                      "id": 82,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 80,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 210,
+                          "src": "755:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 81,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "755:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "745:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reviewer_$17_storage",
+                        "typeString": "struct Main.Reviewer storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 83,
+                      "name": "r",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 70,
+                      "src": "769:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reviewer_$17_memory_ptr",
+                        "typeString": "struct Main.Reviewer memory"
+                      }
+                    },
+                    "src": "745:25:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Reviewer_$17_storage",
+                      "typeString": "struct Main.Reviewer storage ref"
+                    }
+                  },
+                  "id": 85,
+                  "nodeType": "ExpressionStatement",
+                  "src": "745:25:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 87,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "776:14:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 86,
+                      "name": "reviewerSize",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36,
+                      "src": "776:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 88,
+                  "nodeType": "ExpressionStatement",
+                  "src": "776:14:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 90,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addReviewer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 90,
+                  "src": "646:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "646:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "645:20:0"
+            },
+            "returnParameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "673:0:0"
+            },
+            "scope": 138,
+            "src": "625:170:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 97,
+              "nodeType": "Block",
+              "src": "851:26:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 95,
+                    "name": "shopSize",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 29,
+                    "src": "864:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 94,
+                  "id": 96,
+                  "nodeType": "Return",
+                  "src": "857:15:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 98,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getShopNumber",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 91,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "821:2:0"
+            },
+            "returnParameters": {
+              "id": 94,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 93,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "845:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 92,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "845:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "844:6:0"
+            },
+            "scope": 138,
+            "src": "799:78:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 103,
+            "name": "reviewMap",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "911:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Review_$26_storage_$dyn_storage_$",
+              "typeString": "mapping(string => struct Main.Review[])"
+            },
+            "typeName": {
+              "id": 102,
+              "keyType": {
+                "id": 99,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "919:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "911:27:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Review_$26_storage_$dyn_storage_$",
+                "typeString": "mapping(string => struct Main.Review[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "contractScope": null,
+                  "id": 100,
+                  "name": "Review",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 26,
+                  "src": "929:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Review_$26_storage_ptr",
+                    "typeString": "struct Main.Review"
+                  }
+                },
+                "id": 101,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "929:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_Review_$26_storage_$dyn_storage_ptr",
+                  "typeString": "struct Main.Review[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 136,
+              "nodeType": "Block",
+              "src": "1038:166:0",
+              "statements": [
+                {
+                  "assignments": [
+                    113
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 113,
+                      "name": "rer",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 136,
+                      "src": "1046:19:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reviewer_$17_memory_ptr",
+                        "typeString": "struct Main.Reviewer"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 112,
+                        "name": "Reviewer",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 17,
+                        "src": "1046:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Reviewer_$17_storage_ptr",
+                          "typeString": "struct Main.Reviewer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 118,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 114,
+                      "name": "reviewers",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 40,
+                      "src": "1068:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Reviewer_$17_storage_$",
+                        "typeString": "mapping(address => struct Main.Reviewer storage ref)"
+                      }
+                    },
+                    "id": 117,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 115,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 210,
+                        "src": "1078:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 116,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1078:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1068:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Reviewer_$17_storage",
+                      "typeString": "struct Main.Reviewer storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1046:43:0"
+                },
+                {
+                  "assignments": [
+                    120
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 120,
+                      "name": "review",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 136,
+                      "src": "1097:20:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Review_$26_memory_ptr",
+                        "typeString": "struct Main.Review"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 119,
+                        "name": "Review",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 26,
+                        "src": "1097:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Review_$26_storage_ptr",
+                          "typeString": "struct Main.Review"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 128,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 122,
+                        "name": "score",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 107,
+                        "src": "1127:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 123,
+                        "name": "reviewee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 105,
+                        "src": "1133:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 124,
+                          "name": "rer",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 113,
+                          "src": "1142:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Reviewer_$17_memory_ptr",
+                            "typeString": "struct Main.Reviewer memory"
+                          }
+                        },
+                        "id": 125,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "name",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 12,
+                        "src": "1142:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "comment",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 109,
+                        "src": "1151:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 121,
+                      "name": "Review",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 26,
+                      "src": "1120:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Review_$26_storage_ptr_$",
+                        "typeString": "type(struct Main.Review storage pointer)"
+                      }
+                    },
+                    "id": 127,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1120:39:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Review_$26_memory",
+                      "typeString": "struct Main.Review memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1097:62:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 133,
+                        "name": "review",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 120,
+                        "src": "1192:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Review_$26_memory_ptr",
+                          "typeString": "struct Main.Review memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Review_$26_memory_ptr",
+                          "typeString": "struct Main.Review memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 129,
+                          "name": "reviewMap",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 103,
+                          "src": "1167:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Review_$26_storage_$dyn_storage_$",
+                            "typeString": "mapping(string memory => struct Main.Review storage ref[] storage ref)"
+                          }
+                        },
+                        "id": 131,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 130,
+                          "name": "reviewee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 105,
+                          "src": "1177:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1167:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Review_$26_storage_$dyn_storage",
+                          "typeString": "struct Main.Review storage ref[] storage ref"
+                        }
+                      },
+                      "id": 132,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1167:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Review_$26_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Main.Review storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 134,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1167:32:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 135,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1167:32:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 137,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addReview",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 110,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 105,
+                  "name": "reviewee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 137,
+                  "src": "972:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 104,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "972:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 107,
+                  "name": "score",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 137,
+                  "src": "996:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 106,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "996:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 109,
+                  "name": "comment",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 137,
+                  "src": "1008:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 108,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1008:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "971:59:0"
+            },
+            "returnParameters": {
+              "id": 111,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1038:0:0"
+            },
+            "scope": 138,
+            "src": "953:251:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 139,
+        "src": "26:1180:0"
+      }
+    ],
+    "src": "0:1207:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/admin/Desktop/Reviews/contracts/Main.sol",
+    "exportedSymbols": {
+      "Main": [
+        138
+      ]
+    },
+    "id": 139,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 138,
+        "linearizedBaseContracts": [
+          138
+        ],
+        "name": "Main",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Main.Shop",
+            "id": 8,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "score",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "63:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "63:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "79:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "79:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "owner",
+                "nodeType": "VariableDeclaration",
+                "scope": 8,
+                "src": "96:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "96:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Shop",
+            "nodeType": "StructDefinition",
+            "scope": 138,
+            "src": "45:69:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Main.Reviewer",
+            "id": 17,
+            "members": [
+              {
+                "constant": false,
+                "id": 10,
+                "name": "score",
+                "nodeType": "VariableDeclaration",
+                "scope": 17,
+                "src": "140:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "140:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 12,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 17,
+                "src": "156:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "156:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14,
+                "name": "reviewerId",
+                "nodeType": "VariableDeclaration",
+                "scope": 17,
+                "src": "173:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 13,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "173:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 16,
+                "name": "sender",
+                "nodeType": "VariableDeclaration",
+                "scope": 17,
+                "src": "194:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 15,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "194:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Reviewer",
+            "nodeType": "StructDefinition",
+            "scope": 138,
+            "src": "118:95:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Main.Review",
+            "id": 26,
+            "members": [
+              {
+                "constant": false,
+                "id": 19,
+                "name": "score",
+                "nodeType": "VariableDeclaration",
+                "scope": 26,
+                "src": "237:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 18,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "237:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "shopName",
+                "nodeType": "VariableDeclaration",
+                "scope": 26,
+                "src": "253:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 20,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "253:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 23,
+                "name": "reviewerName",
+                "nodeType": "VariableDeclaration",
+                "scope": 26,
+                "src": "274:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 22,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "274:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 25,
+                "name": "comment",
+                "nodeType": "VariableDeclaration",
+                "scope": 26,
+                "src": "299:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 24,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "299:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Review",
+            "nodeType": "StructDefinition",
+            "scope": 138,
+            "src": "217:101:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 29,
+            "name": "shopSize",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "322:17:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 27,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "322:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 28,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "338:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 33,
+            "name": "Shops",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "362:29:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Shop_$8_storage_$",
+              "typeString": "mapping(string => struct Main.Shop)"
+            },
+            "typeName": {
+              "id": 32,
+              "keyType": {
+                "id": 30,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "370:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "362:23:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Shop_$8_storage_$",
+                "typeString": "mapping(string => struct Main.Shop)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 31,
+                "name": "Shop",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 8,
+                "src": "380:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Shop_$8_storage_ptr",
+                  "typeString": "struct Main.Shop"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 36,
+            "name": "reviewerSize",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "396:21:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 34,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "396:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 35,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "416:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 40,
+            "name": "reviewers",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "447:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Reviewer_$17_storage_$",
+              "typeString": "mapping(address => struct Main.Reviewer)"
+            },
+            "typeName": {
+              "id": 39,
+              "keyType": {
+                "id": 37,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "455:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "447:28:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Reviewer_$17_storage_$",
+                "typeString": "mapping(address => struct Main.Reviewer)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 38,
+                "name": "Reviewer",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 17,
+                "src": "466:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Reviewer_$17_storage_ptr",
+                  "typeString": "struct Main.Reviewer"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 63,
+              "nodeType": "Block",
+              "src": "534:87:0",
+              "statements": [
+                {
+                  "assignments": [
+                    46
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 46,
+                      "name": "s",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 63,
+                      "src": "540:13:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Shop_$8_memory_ptr",
+                        "typeString": "struct Main.Shop"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 45,
+                        "name": "Shop",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 8,
+                        "src": "540:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Shop_$8_storage_ptr",
+                          "typeString": "struct Main.Shop"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 53,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 48,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "561:1:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 49,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 42,
+                        "src": "563:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 50,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 210,
+                          "src": "568:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 51,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "568:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 47,
+                      "name": "Shop",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "556:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Shop_$8_storage_ptr_$",
+                        "typeString": "type(struct Main.Shop storage pointer)"
+                      }
+                    },
+                    "id": 52,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "556:23:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Shop_$8_memory",
+                      "typeString": "struct Main.Shop memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "540:39:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 58,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 54,
+                        "name": "Shops",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 33,
+                        "src": "585:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_$_t_struct$_Shop_$8_storage_$",
+                          "typeString": "mapping(string memory => struct Main.Shop storage ref)"
+                        }
+                      },
+                      "id": 56,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 55,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 42,
+                        "src": "591:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "585:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Shop_$8_storage",
+                        "typeString": "struct Main.Shop storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 57,
+                      "name": "s",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 46,
+                      "src": "599:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Shop_$8_memory_ptr",
+                        "typeString": "struct Main.Shop memory"
+                      }
+                    },
+                    "src": "585:15:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Shop_$8_storage",
+                      "typeString": "struct Main.Shop storage ref"
+                    }
+                  },
+                  "id": 59,
+                  "nodeType": "ExpressionStatement",
+                  "src": "585:15:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 61,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "606:10:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 60,
+                      "name": "shopSize",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "606:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 62,
+                  "nodeType": "ExpressionStatement",
+                  "src": "606:10:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 64,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addShop",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 43,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 64,
+                  "src": "507:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 41,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "507:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "506:20:0"
+            },
+            "returnParameters": {
+              "id": 44,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "534:0:0"
+            },
+            "scope": 138,
+            "src": "490:131:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 89,
+              "nodeType": "Block",
+              "src": "673:122:0",
+              "statements": [
+                {
+                  "assignments": [
+                    70
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 70,
+                      "name": "r",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 89,
+                      "src": "679:17:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reviewer_$17_memory_ptr",
+                        "typeString": "struct Main.Reviewer"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 69,
+                        "name": "Reviewer",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 17,
+                        "src": "679:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Reviewer_$17_storage_ptr",
+                          "typeString": "struct Main.Reviewer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 78,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "30",
+                        "id": 72,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "708:1:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 73,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 66,
+                        "src": "710:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 74,
+                        "name": "reviewerSize",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36,
+                        "src": "715:12:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 75,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 210,
+                          "src": "728:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 76,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "728:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 71,
+                      "name": "Reviewer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "699:8:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Reviewer_$17_storage_ptr_$",
+                        "typeString": "type(struct Main.Reviewer storage pointer)"
+                      }
+                    },
+                    "id": 77,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "699:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Reviewer_$17_memory",
+                      "typeString": "struct Main.Reviewer memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "679:60:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 84,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 79,
+                        "name": "reviewers",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 40,
+                        "src": "745:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Reviewer_$17_storage_$",
+                          "typeString": "mapping(address => struct Main.Reviewer storage ref)"
+                        }
+                      },
+                      "id": 82,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 80,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 210,
+                          "src": "755:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 81,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "755:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "745:21:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reviewer_$17_storage",
+                        "typeString": "struct Main.Reviewer storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 83,
+                      "name": "r",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 70,
+                      "src": "769:1:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reviewer_$17_memory_ptr",
+                        "typeString": "struct Main.Reviewer memory"
+                      }
+                    },
+                    "src": "745:25:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Reviewer_$17_storage",
+                      "typeString": "struct Main.Reviewer storage ref"
+                    }
+                  },
+                  "id": 85,
+                  "nodeType": "ExpressionStatement",
+                  "src": "745:25:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 87,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "776:14:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 86,
+                      "name": "reviewerSize",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36,
+                      "src": "776:12:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 88,
+                  "nodeType": "ExpressionStatement",
+                  "src": "776:14:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 90,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addReviewer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 90,
+                  "src": "646:18:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "646:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "645:20:0"
+            },
+            "returnParameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "673:0:0"
+            },
+            "scope": 138,
+            "src": "625:170:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 97,
+              "nodeType": "Block",
+              "src": "851:26:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 95,
+                    "name": "shopSize",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 29,
+                    "src": "864:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 94,
+                  "id": 96,
+                  "nodeType": "Return",
+                  "src": "857:15:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 98,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getShopNumber",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 91,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "821:2:0"
+            },
+            "returnParameters": {
+              "id": 94,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 93,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 98,
+                  "src": "845:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 92,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "845:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "844:6:0"
+            },
+            "scope": 138,
+            "src": "799:78:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 103,
+            "name": "reviewMap",
+            "nodeType": "VariableDeclaration",
+            "scope": 138,
+            "src": "911:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Review_$26_storage_$dyn_storage_$",
+              "typeString": "mapping(string => struct Main.Review[])"
+            },
+            "typeName": {
+              "id": 102,
+              "keyType": {
+                "id": 99,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "919:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "911:27:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Review_$26_storage_$dyn_storage_$",
+                "typeString": "mapping(string => struct Main.Review[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "contractScope": null,
+                  "id": 100,
+                  "name": "Review",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 26,
+                  "src": "929:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Review_$26_storage_ptr",
+                    "typeString": "struct Main.Review"
+                  }
+                },
+                "id": 101,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "929:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_Review_$26_storage_$dyn_storage_ptr",
+                  "typeString": "struct Main.Review[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 136,
+              "nodeType": "Block",
+              "src": "1038:166:0",
+              "statements": [
+                {
+                  "assignments": [
+                    113
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 113,
+                      "name": "rer",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 136,
+                      "src": "1046:19:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Reviewer_$17_memory_ptr",
+                        "typeString": "struct Main.Reviewer"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 112,
+                        "name": "Reviewer",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 17,
+                        "src": "1046:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Reviewer_$17_storage_ptr",
+                          "typeString": "struct Main.Reviewer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 118,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 114,
+                      "name": "reviewers",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 40,
+                      "src": "1068:9:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_Reviewer_$17_storage_$",
+                        "typeString": "mapping(address => struct Main.Reviewer storage ref)"
+                      }
+                    },
+                    "id": 117,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 115,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 210,
+                        "src": "1078:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 116,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1078:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1068:21:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Reviewer_$17_storage",
+                      "typeString": "struct Main.Reviewer storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1046:43:0"
+                },
+                {
+                  "assignments": [
+                    120
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 120,
+                      "name": "review",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 136,
+                      "src": "1097:20:0",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Review_$26_memory_ptr",
+                        "typeString": "struct Main.Review"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 119,
+                        "name": "Review",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 26,
+                        "src": "1097:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Review_$26_storage_ptr",
+                          "typeString": "struct Main.Review"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 128,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 122,
+                        "name": "score",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 107,
+                        "src": "1127:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 123,
+                        "name": "reviewee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 105,
+                        "src": "1133:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 124,
+                          "name": "rer",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 113,
+                          "src": "1142:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Reviewer_$17_memory_ptr",
+                            "typeString": "struct Main.Reviewer memory"
+                          }
+                        },
+                        "id": 125,
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "name",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 12,
+                        "src": "1142:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "comment",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 109,
+                        "src": "1151:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 121,
+                      "name": "Review",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 26,
+                      "src": "1120:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_struct$_Review_$26_storage_ptr_$",
+                        "typeString": "type(struct Main.Review storage pointer)"
+                      }
+                    },
+                    "id": 127,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "structConstructorCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1120:39:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Review_$26_memory",
+                      "typeString": "struct Main.Review memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1097:62:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 133,
+                        "name": "review",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 120,
+                        "src": "1192:6:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Review_$26_memory_ptr",
+                          "typeString": "struct Main.Review memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Review_$26_memory_ptr",
+                          "typeString": "struct Main.Review memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 129,
+                          "name": "reviewMap",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 103,
+                          "src": "1167:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_$_t_array$_t_struct$_Review_$26_storage_$dyn_storage_$",
+                            "typeString": "mapping(string memory => struct Main.Review storage ref[] storage ref)"
+                          }
+                        },
+                        "id": 131,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 130,
+                          "name": "reviewee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 105,
+                          "src": "1177:8:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "1167:19:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Review_$26_storage_$dyn_storage",
+                          "typeString": "struct Main.Review storage ref[] storage ref"
+                        }
+                      },
+                      "id": 132,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1167:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Review_$26_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Main.Review storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 134,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1167:32:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 135,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1167:32:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 137,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addReview",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 110,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 105,
+                  "name": "reviewee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 137,
+                  "src": "972:22:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 104,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "972:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 107,
+                  "name": "score",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 137,
+                  "src": "996:10:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 106,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "996:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 109,
+                  "name": "comment",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 137,
+                  "src": "1008:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 108,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1008:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "971:59:0"
+            },
+            "returnParameters": {
+              "id": 111,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1038:0:0"
+            },
+            "scope": 138,
+            "src": "953:251:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 139,
+        "src": "26:1180:0"
+      }
+    ],
+    "src": "0:1207:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.6",
+  "updatedAt": "2019-05-06T05:20:00.681Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

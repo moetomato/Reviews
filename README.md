@@ -14,7 +14,7 @@ truffle migrate
 ```
 check  address
 ```
-Review.address
+Main.address
 ```
 instantiate
 ```
@@ -29,4 +29,9 @@ web3.eth.getBlockNumber()
 ```
 ```
 web3.eth.getBlock(2)
+```
+
+run server
+```
+npm run dev
 ```

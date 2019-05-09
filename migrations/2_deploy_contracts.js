@@ -1,5 +1,5 @@
-var review = artifacts.require("./Review.sol")
+var Main = artifacts.require("Main");
 
-module.exports = function(deployer) {
-    deployer.deploy(review);
-};
+module.exports = function(deploy){
+    deploy.deploy(Main);
+}

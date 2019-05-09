@@ -1,9 +1,18 @@
-pragma solidity ^0.5.0;
-
+pragma solidity  ^0.5.0;
 
 contract Main {
 
-  struct Shop {
+  string private _word;
+  uint private shopSize;
+
+  constructor() public {
+    _word = "Main!";
+    shopSize = 0;
+  }
+  function get() public view returns(string memory){
+    return _word;
+  }
+ struct Shop {
     uint score;
     string name;
     address owner;
@@ -22,8 +31,6 @@ contract Main {
     string reviewerName;
     string comment;
   }
-
-  uint shopSize = 0;
 
   //name <-> shop
   mapping(string => Shop) Shops;
@@ -45,7 +52,7 @@ contract Main {
     reviewerSize++;
   }
 
-  function getShopNumber() public view returns (uint) {
+  function getShopSize() public view returns (uint) {
     return shopSize;
   }
 
@@ -57,4 +64,5 @@ contract Main {
       Review memory review = Review(score,reviewee,rer.name,comment);
       reviewMap[reviewee].push(review);
   }
+
 }

@@ -18,7 +18,7 @@ Main.address
 ```
 instantiate
 ```
-let instance = await Review.deployed()
+let instance = await Main.deployed()
 ```
 ```
 instance.<method>()

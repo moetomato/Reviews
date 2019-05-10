@@ -2,16 +2,14 @@ pragma solidity  ^0.5.0;
 
 contract Main {
 
-  string private _word;
   uint private shopSize;
+  uint private reviewerSize;
 
   constructor() public {
-    _word = "Main!";
     shopSize = 0;
+    reviewerSize = 0;
   }
-  function get() public view returns(string memory){
-    return _word;
-  }
+
  struct Shop {
     uint score;
     string name;
@@ -33,18 +31,20 @@ contract Main {
   }
 
   //name <-> shop
-  mapping(string => Shop) Shops;
+  mapping(string => Shop) private ShopDetails;
 
-  uint reviewerSize = 0;
-
-  //address <-> reviewer
-  mapping(address => Reviewer) reviewers;
+  // shop name list
+  string[] private shops;
 
   function addShop(string memory name) public {
+    shops.push(name);
     Shop memory s = Shop(0,name,msg.sender);
-    Shops[name] = s;
+    ShopDetails[name] = s;
     shopSize++;
   }
+
+  //address <-> reviewer
+  mapping(address => Reviewer) private reviewers;
 
   function addReviewer(string memory name) public {
     Reviewer memory r = Reviewer(0,name,reviewerSize,msg.sender);
@@ -60,9 +60,8 @@ contract Main {
   mapping(string => Review[]) reviewMap;
 
   function addReview(string memory reviewee, uint score, string memory comment) public {
-      Reviewer memory rer = reviewers[msg.sender];
-      Review memory review = Review(score,reviewee,rer.name,comment);
+      Reviewer memory reviewer = reviewers[msg.sender];
+      Review memory review = Review(score,reviewee,reviewer.name,comment);
       reviewMap[reviewee].push(review);
   }
-
 }

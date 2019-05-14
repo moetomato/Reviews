@@ -19,7 +19,6 @@ contract Main {
   struct Reviewer {
     uint score;
     string name;
-    uint reviewerId;
     address sender;
   }
 
@@ -43,8 +42,9 @@ contract Main {
     shopSize++;
   }
 
-  function getShop(string memory s) public view returns (Shop) {
-    return shopDetails[s];
+  function getShop(string memory name) public view returns (uint,string memory,address) {
+    Shop memory s = ShopDetails[name];
+    return (s.score, s.name, s.owner);
   }
 
   function getShopSize() public view returns (uint) {
@@ -55,13 +55,14 @@ contract Main {
   mapping(address => Reviewer) private reviewers;
 
   function addReviewer(string memory name) public {
-    Reviewer memory r = Reviewer(0,name,reviewerSize,msg.sender);
+    Reviewer memory r = Reviewer(0,name,msg.sender);
     reviewers[msg.sender] = r;
     reviewerSize++;
   }
 
-  function getReviewer(address a) public view returns (Reviewer memory) {
-    return reviewers[a];
+  function getReviewer(address a) public view returns (uint,string memory,address) {
+    Reviewer memory r = reviewers[a];
+    return (r.score, r.name, r.sender);
   }
 
   //shop name <-> review list
@@ -73,9 +74,8 @@ contract Main {
       reviewMap[reviewee].push(review);
   }
 
-  function getReview(string memory s) public view returns (Review[]) {
-      // return memory change
-      //Exception handling
-      return reviewMap[s];
-  }
+  // function getReview(string memory s) public view returns (Review[]) {
+  //     //Exception handling
+  //     return reviewMap[s];
+  // }
 }

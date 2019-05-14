@@ -34,13 +34,21 @@ contract Main {
   mapping(string => Shop) private ShopDetails;
 
   // shop name list
-  string[] private shops;
+  string[] public shops;
 
   function addShop(string memory name) public {
     shops.push(name);
     Shop memory s = Shop(0,name,msg.sender);
     ShopDetails[name] = s;
     shopSize++;
+  }
+
+  function getShop(string memory s) public view returns (Shop) {
+    return shopDetails[s];
+  }
+
+  function getShopSize() public view returns (uint) {
+    return shopSize;
   }
 
   //address <-> reviewer
@@ -52,8 +60,8 @@ contract Main {
     reviewerSize++;
   }
 
-  function getShopSize() public view returns (uint) {
-    return shopSize;
+  function getReviewer(address a) public view returns (Reviewer memory) {
+    return reviewers[a];
   }
 
   //shop name <-> review list
@@ -63,5 +71,11 @@ contract Main {
       Reviewer memory reviewer = reviewers[msg.sender];
       Review memory review = Review(score,reviewee,reviewer.name,comment);
       reviewMap[reviewee].push(review);
+  }
+
+  function getReview(string memory s) public view returns (Review[]) {
+      // return memory change
+      //Exception handling
+      return reviewMap[s];
   }
 }

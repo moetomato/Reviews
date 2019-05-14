@@ -53,6 +53,7 @@ contract Main {
 
   //address <-> reviewer
   mapping(address => Reviewer) private reviewers;
+  mapping(string => address) private reviewerMap;
 
   function addReviewer(string memory name) public {
     Reviewer memory r = Reviewer(0,name,msg.sender);
@@ -65,6 +66,10 @@ contract Main {
     return (r.score, r.name, r.sender);
   }
 
+  function getReviewerSize() public view returns (uint) {
+    return  reviewerSize;
+  }
+
   //shop name <-> review list
   mapping(string => Review[]) reviewMap;
 
@@ -72,10 +77,22 @@ contract Main {
       Reviewer memory reviewer = reviewers[msg.sender];
       Review memory review = Review(score,reviewee,reviewer.name,comment);
       reviewMap[reviewee].push(review);
+      updateShopScore(reviewee,score);
   }
 
   // function getReview(string memory s) public view returns (Review[]) {
   //     //Exception handling
   //     return reviewMap[s];
   // }
+
+  function updateShopScore(string memory s, uint k) public view {
+      Shop memory target = ShopDetails[s];
+      target.score += k;
+  }
+
+  function updateReviewerScore(string memory r, uint k) public view{
+      address ta = reviewerMap[r];
+      Reviewer memory target = reviewers[ta];
+      target.score += k;
+  }
 }

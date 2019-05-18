@@ -99,8 +99,9 @@ contract Main {
   mapping(uint => uint[]) peerReviews;
   uint[] a;
   function getPeerReviews() public returns(uint[] memory){
-    a.push(111);
-    a.push(123);
+    a = new uint[](100);
+    a[0] = 123;
+    a[1] = 111;
     return a;
   }
 }

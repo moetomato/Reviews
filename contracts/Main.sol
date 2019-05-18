@@ -95,4 +95,12 @@ contract Main {
       Reviewer memory target = reviewers[ta];
       target.score += k;
   }
+
+  mapping(uint => uint[]) peerReviews;
+  uint[] a;
+  function getPeerReviews() public returns(uint[] memory){
+    a.push(111);
+    a.push(123);
+    return a;
+  }
 }

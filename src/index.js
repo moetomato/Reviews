@@ -15,7 +15,7 @@ App = {
             App.contracts.Main.setProvider(App.web3Provider);
 
             App.contracts.Main.deployed().then(function(instance) {
-                return instance.getShopSize.call();
+                return instance.getPeerReviews.call();
             }).then(function(adopters){
                 document.write(adopters);
             }).catch(function(err){

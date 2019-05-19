@@ -19,7 +19,9 @@ contract Main {
   struct Reviewer {
     uint score;
     string name;
-    address sender;
+    address owner;
+    uint id;
+    uint peerReviewNum;
   }
 
   struct Review {
@@ -54,16 +56,19 @@ contract Main {
   //address <-> reviewer
   mapping(address => Reviewer) private reviewers;
   mapping(string => address) private reviewerMap;
+  mapping(uint => uint[]) peerReviews;
 
   function addReviewer(string memory name) public {
-    Reviewer memory r = Reviewer(0,name,msg.sender);
+    Reviewer memory r = Reviewer(0,name,msg.sender,reviewerSize,0);
     reviewers[msg.sender] = r;
+    reviewerMap[name] = msg.sender;
+    peerReviews[r.id] = new uint[](100);
     reviewerSize++;
   }
 
   function getReviewer(address a) public view returns (uint,string memory,address) {
     Reviewer memory r = reviewers[a];
-    return (r.score, r.name, r.sender);
+    return (r.score, r.name, r.owner);
   }
 
   function getReviewerSize() public view returns (uint) {
@@ -95,16 +100,15 @@ contract Main {
       Reviewer memory target = reviewers[ta];
       target.score += k;
   }
-
-  mapping(uint => uint[]) peerReviews;
-
-  function addPeerReviews() public{
-    peerReviews[0] = new uint[](10);
-    peerReviews[0][3] = 1;
+  //あとはJS側でなんとかする
+  function addPeerReviews(address t) public{
+    Reviewer memory target = reviewers[t];
+    Reviewer memory reviewer = reviewers[msg.sender];
+    reviewer.peerReviewNum++;
+    peerReviews[reviewer.id][target.id] = 1;
   }
 
-  function getPeerReviews() public returns(uint[] memory){
-    addPeerReviews();
-    return peerReviews[0];
+  function getPeerReviews(uint i) public view returns(uint[] memory){
+    return peerReviews[i];
   }
 }

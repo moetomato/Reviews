@@ -31,6 +31,11 @@ contract Main {
     string comment;
   }
 
+  struct Checker {
+    uint score;
+    address owner;
+  }
+
   //name <-> shop
   mapping(string => Shop) private ShopDetails;
 
@@ -94,12 +99,6 @@ contract Main {
       Shop memory target = ShopDetails[s];
       target.score += k;
   }
-
-  function updateReviewerScore(string memory r, uint k) public view{
-      address ta = reviewerMap[r];
-      Reviewer memory target = reviewers[ta];
-      target.score += k;
-  }
   //あとはJS側でなんとかする
   function addPeerReviews(address t) public{
     Reviewer memory target = reviewers[t];
@@ -111,4 +110,11 @@ contract Main {
   function getPeerReviews(uint i) public view returns(uint[] memory){
     return peerReviews[i];
   }
+
+  function updateReviewerScore(string memory r, uint k) public view{
+      address ta = reviewerMap[r];
+      Reviewer memory target = reviewers[ta];
+      target.score = k;
+  }
+
 }

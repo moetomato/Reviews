@@ -15,9 +15,21 @@ App = {
             App.contracts.Main.setProvider(App.web3Provider);
 
             App.contracts.Main.deployed().then(function(instance) {
-                return instance.getPeerReviews.call();
+                return instance.getShopSize.call();
             }).then(function(adopters){
                 document.write(adopters);
+            }).catch(function(err){
+                console.log(err.message);
+            });
+
+            App.contracts.Main.deployed().then(function(instance) {
+                const event = instance.checkReviews().Check();
+                //イベント監視
+                event.watch(function (error, result) {
+                    console.log('watching "Check" event!');
+                    if (!error)
+                    console.log(result);
+                });
             }).catch(function(err){
                 console.log(err.message);
             });

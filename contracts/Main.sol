@@ -84,12 +84,17 @@ contract Main {
   mapping(string => Review[]) reviewMap;
 
   function addReview(string memory reviewee, uint score, string memory comment) public {
+      checkReview(comment);
       Reviewer memory reviewer = reviewers[msg.sender];
       Review memory review = Review(score,reviewee,reviewer.name,comment);
       reviewMap[reviewee].push(review);
       updateShopScore(reviewee,score);
   }
 
+  event Check(string comment);
+  function checkReview(string memory str) public {
+      emit Check(str);
+  }
   // function getReview(string memory s) public view returns (Review[]) {
   //     //Exception handling
   //     return reviewMap[s];

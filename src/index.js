@@ -21,15 +21,6 @@ App = {
             }).catch(function(err){
                 console.log(err.message);
             });
-
-            App.contracts.Main.deployed().then(function(instance) {
-                const event = instance.Check()
-                .on("data", function(event) {
-                    //console.log("aaaaaa");
-                }).on("error", console.error);
-            }).catch(function(err){
-                console.log(err.message);
-            });
         });
     }
 }

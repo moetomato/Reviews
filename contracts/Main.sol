@@ -11,10 +11,15 @@ contract Main {
     shopSize = 0;
     reviewerSize = 0;
     checkerSize = 0;
-    peerReviews = new uint[][](100);
+    peerReviews = new uint[][](10);
+    initArray();
   }
 
- struct Shop {
+  function initArray() public {
+    for(uint i = 0; i<10; i++) peerReviews[i] = new uint[](10);
+  }
+
+  struct Shop {
     uint score;
     string name;
     address owner;
@@ -116,16 +121,13 @@ contract Main {
     peerReviews[target.id][reviewer.id] = 1;
   }
 
+  function getPeerReviews(uint i, uint j) public view returns (uint, uint, uint) {
+    return (peerReviews[i][j], i, j);
+  }
+
   function updateReviewerScore(uint i) public {
       uint updatedScore = calcPeerReviewScore();
       reviewers[i].score = updatedScore;
-  }
-
-  Checker[] checkers;
-  function addChecker() public {
-    Checker memory checker = Checker(1,msg.sender,checkerSize);
-    checkers.push(checker);
-    checkerSize++;
   }
 
   function calcPeerReviewScore() public pure returns (uint) {
@@ -146,4 +148,11 @@ contract Main {
   //     if(sum<random) return c;
   //   }
   // }
+
+  Checker[] checkers;
+  function addChecker() public {
+    Checker memory checker = Checker(1,msg.sender,checkerSize);
+    checkers.push(checker);
+    checkerSize++;
+  }
 }

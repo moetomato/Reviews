@@ -1,158 +1,60 @@
 pragma solidity  ^0.5.0;
 
 contract Main {
+    uint constant numOfReviewees = 1;
 
-  uint private shopSize;
-  uint private reviewerSize;
-  uint private checkerSize;
-  uint[][] peerReviews;
+    string lastCalcTimeStamp;
 
-  constructor() public {
-    shopSize = 0;
-    reviewerSize = 0;
-    checkerSize = 0;
-    peerReviews = new uint[][](10);
-    initArray();
-  }
+    uint dnaDigits = 16;
 
-  function initArray() public {
-    for(uint i = 0; i<10; i++) peerReviews[i] = new uint[](10);
-  }
+    uint dnaModulus = 10 ** dnaDigits;
 
-  struct Shop {
-    uint score;
-    string name;
-    address owner;
+  struct Review {
+      string reviewer;
+      uint score;
+      string sentence;
+      bool[] approvals;
   }
 
   struct Reviewer {
-    uint score;
     string name;
-    address owner;
-    uint id;
-    uint peerReviewNum;
+    address adr;
+    uint score;
   }
 
-  struct Review {
+  struct Reviewee {
+    string name;
+    address adr;
     uint score;
-    string shopName;
-    string reviewerName;
-    string comment;
   }
 
   struct Checker {
-    uint score;
-    address owner;
-    uint id;
+    address ads;
   }
 
-  //name <-> shop
-  mapping(string => Shop) private ShopDetails;
+  bool[numOfReviewees][] public graph;
 
-  // shop name list
-  string[] public shops;
+  Checker[] public  checkers;
 
-  function addShop(string memory name) public {
-    shops.push(name);
-    Shop memory s = Shop(0,name,msg.sender);
-    ShopDetails[name] = s;
-    shopSize++;
+  mapping (string => Reviewer) nameToReviewer;
+
+  mapping(string => Reviewee) nameToReviewee;
+
+  mapping(string => Review[]) revieweeToReview;
+
+  mapping(string => Review[]) reviewerToReview;
+
+  // constructor
+  constructor() public {
+    graph = new bool[numOfReviewees][](numOfReviewees);
   }
 
-  function getShop(string memory name) public view returns (uint,string memory,address) {
-    Shop memory s = ShopDetails[name];
-    return (s.score, s.name, s.owner);
+  function _generateRandomNumber(string memory _str) private view returns (uint) {
+      uint rand = uint(keccak256(abi.encode(_str)));
+      return rand % dnaModulus;
   }
 
-  function getShopSize() public view returns (uint) {
-    return shopSize;
-  }
+  // function _addReview(string memory _reviewer, string memory _reviewee, uint _score, string memory _sentence) public {
 
-  //id -> reviewer
-  mapping(uint => Reviewer) private reviewers;
-  //address -> id
-  mapping(address => uint) private idMap;
-
-  function addReviewer(string memory name) public {
-    Reviewer memory r = Reviewer(0,name,msg.sender,reviewerSize,0);
-    reviewers[reviewerSize] = r;
-    idMap[msg.sender] = reviewerSize;
-    reviewerSize++;
-  }
-
-  function getReviewer(uint a) public view returns (uint,string memory,address) {
-    Reviewer memory r = reviewers[a];
-    return (r.score, r.name, r.owner);
-  }
-
-  function getReviewerSize() public view returns (uint) {
-    return  reviewerSize;
-  }
-
-  //shop name <-> review list
-  mapping(string => Review[]) reviewMap;
-
-  function addReview(string memory reviewee, uint score, string memory comment) public {
-    //  checkReview(comment);
-      uint id = idMap[msg.sender];
-      Reviewer memory reviewer = reviewers[id];
-      Review memory review = Review(score,reviewee,reviewer.name,comment);
-      reviewMap[reviewee].push(review);
-      updateShopScore(reviewee,score);
-  }
-
-  // function getReview(string memory s, uint i) public view returns (Review memory) {
-  //     //Exception handling
-  //     return reviewMap[s][i];
-  // }
-
-  function updateShopScore(string memory s, uint k) public view {
-      Shop memory target = ShopDetails[s];
-      target.score += k;
-  }
-
-  function addPeerReviews(uint t) public{
-    //get reveiwee's detail
-    Reviewer memory target = reviewers[t];
-    //get reviewer's detail
-    uint id = idMap[msg.sender];
-    Reviewer memory reviewer = reviewers[id];
-    reviewer.peerReviewNum++;
-    peerReviews[target.id][reviewer.id] = 1;
-  }
-
-  function getPeerReviews(uint i, uint j) public view returns (uint, uint, uint) {
-    return (peerReviews[i][j], i, j);
-  }
-
-  function updateReviewerScore(uint i) public {
-      uint updatedScore = calcPeerReviewScore();
-      reviewers[i].score = updatedScore;
-  }
-
-  function calcPeerReviewScore() public pure returns (uint) {
-    // Checker memory c1 = selectChecker();
-    // Checker memory c2 = selectChecker();
-    // Checker memory c3 = selectChecker();
-    // それぞれのcheckerに通知
-    return 1;
-  }
-
-  // function selectChecker() public returns (Checker memory) {
-  //   uint i = block.timestamp;
-  //   uint random = i % checkerSize;
-  //   uint sum = 0;
-  //   for(uint j = 0; j < checkerSize; j++){
-  //     Checker memory c = checkers[i];
-  //     sum += c.score;
-  //     if(sum<random) return c;
-  //   }
-  // }
-
-  Checker[] checkers;
-  function addChecker() public {
-    Checker memory checker = Checker(1,msg.sender,checkerSize);
-    checkers.push(checker);
-    checkerSize++;
-  }
+  // } 
 }

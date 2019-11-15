@@ -35,7 +35,7 @@ contract Main {
   }
 
   struct Checker {
-    address adrs;
+    address payable adrs;
   }
 
   bool[numOfReviewees][] public graph;
@@ -50,7 +50,6 @@ contract Main {
 
   mapping(string => Review[]) reviewerToReview;
 
-  // constructor
   constructor() public {
     graph = new bool[numOfReviewees][](numOfReviewees);
   }
@@ -97,5 +96,18 @@ contract Main {
       else review.isApproved = review.checkerToApproval[checker3.adrs];
       emit checkDone(_reviewer, _num);
     }
+  }
+
+  function _addApproviedReview(string memory _reviewer, uint _num) public {
+    Review storage review = reviewerToReview[_reviewer][_num];
+    revieweeToReview[review.reviewee].push(review);
+    if(review.checkerToApproval[review.checker1.adrs] == review.isApproved) _send(review.checker1.adrs,100);
+    if(review.checkerToApproval[review.checker2.adrs] == review.isApproved) _send(review.checker2.adrs,100);
+    if(review.checkerToApproval[review.checker3.adrs] == review.isApproved) _send(review.checker3.adrs,100);
+  }
+
+  function _send(address payable _to, uint256 amount) public {
+    require(amount <= address(this).balance);
+    _to.transfer(amount);
   }
 }

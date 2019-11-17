@@ -24,7 +24,7 @@ contract Main {
 
   struct Reviewer {
     string name;
-    address adr;
+    address payable adr;
     uint score;
   }
 
@@ -98,16 +98,15 @@ contract Main {
     }
   }
 
-  function _addApproviedReview(string memory _reviewer, uint _num) public {
+  function _addApproviedReview(string memory _reviewer, uint _num) public payable {
     Review storage review = reviewerToReview[_reviewer][_num];
     revieweeToReview[review.reviewee].push(review);
-    if(review.checkerToApproval[review.checker1.adrs] == review.isApproved) _send(review.checker1.adrs,100);
-    if(review.checkerToApproval[review.checker2.adrs] == review.isApproved) _send(review.checker2.adrs,100);
-    if(review.checkerToApproval[review.checker3.adrs] == review.isApproved) _send(review.checker3.adrs,100);
+    if(review.checkerToApproval[review.checker1.adrs] == review.isApproved) _send(review.checker1.adrs, msg.value);
+    if(review.checkerToApproval[review.checker2.adrs] == review.isApproved) _send(review.checker2.adrs, msg.value);
+    if(review.checkerToApproval[review.checker3.adrs] == review.isApproved) _send(review.checker3.adrs, msg.value);
   }
 
-  function _send(address payable _to, uint256 amount) public {
-    require(amount <= address(this).balance);
+  function _send(address payable _to, uint amount) public {
     _to.transfer(amount);
   }
 }

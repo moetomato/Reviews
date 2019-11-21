@@ -15,7 +15,7 @@ App = {
             App.contracts.Main = TruffleContract(Artifact);
             App.contracts.Main.setProvider(App.web3Provider);
             App.contracts.Main.deployed().then(function(instance) {
-                return instance.getShopSize();
+                return instance.testfunc();
             }).then(function(adopters){
                 document.write(adopters);
             }).catch(function(err){

@@ -1,11 +1,12 @@
 pragma solidity  ^0.5.0;
 
 contract Main {
-    uint constant numOfReviewees = 1;
 
     uint constant numOfCheckers = 3;
 
-    uint constant numOfAllCheckers = 100;
+    uint numOfAllCheckers;
+
+    uint numOfReviewers;
 
     // 11/17 -> 1117
     uint lastCalcTimeStamp;
@@ -26,6 +27,7 @@ contract Main {
   struct Reviewer {
     string name;
     address adrs;
+    uint id;
     // initiated with 100.
     uint score;
     uint newScore;
@@ -44,7 +46,7 @@ contract Main {
   string[] private reviewers;
 
   mapping(string => bool) reviewerHasPR;
- 
+
   Checker[] public  checkers;
 
   mapping (string => Reviewer) nameToReviewer;
@@ -57,17 +59,19 @@ contract Main {
 
   mapping(string => string[]) graph;
 
-  // constructor() public {
-  // }
+  constructor() public {
+    numOfAllCheckers = 0;
+  }
 
   event notifyChecker(address indexed adr, string reviewer, uint num);
 
-  event checkDone(string indexed userName, uint num);
+  event checkDone(uint indexed userID, uint num);
 
   function _addReviewer(string memory _name, address _adrs) public {
-    Reviewer memory reviewer = Reviewer(_name, _adrs, 100, 0);
+    Reviewer memory reviewer = Reviewer(_name, _adrs, numOfReviewers, 100, 0);
     reviewers.push(_name);
     nameToReviewer[_name] = reviewer;
+    numOfReviewers++;
   }
 
   function _addReviewee(string memory _name, address _adrs) public {
@@ -77,6 +81,7 @@ contract Main {
 
   function _addChecker(address payable _adrs) public {
     Checker memory checker = Checker(_adrs);
+    numOfAllCheckers++;
     checkers.push(checker);
   }
 
@@ -116,11 +121,12 @@ contract Main {
       Checker memory checker3 = review.checker3;
       if(review.checkerToApproval[checker1.adrs] == review.checkerToApproval[checker2.adrs]) review.isApproved = review.checkerToApproval[checker1.adrs];
       else review.isApproved = review.checkerToApproval[checker3.adrs];
-      emit checkDone(_reviewer, _num);
+      Reviewer memory reviewer = nameToReviewer[_reviewer];
+      emit checkDone(reviewer.id, _num);
     }
   }
 
-  function _addApproviedReview(string memory _reviewer, uint _num) public payable {
+  function _addApprovedReview(string memory _reviewer, uint _num) public payable {
     Review storage review = reviewerToReview[_reviewer][_num];
     Reviewee memory reviewee = nameToReviewee[review.reviewee];
     uint numOfReview = revieweeToReview[reviewee.name].length;
@@ -132,7 +138,7 @@ contract Main {
     if(review.checkerToApproval[review.checker3.adrs] == review.isApproved) _send(review.checker3.adrs, msg.value);
   }
 
-  function _send(address payable _to, uint amount) public {
+  function _send(address payable _to, uint amount) private {
     _to.transfer(amount);
   }
 

@@ -3,35 +3,11 @@
 #### Running
 create new network at localhost:9545
 ```
-truffle develop
-```
-
-```
-truffle compile
+truffle console --network ganache
 ```
 ```
-truffle migrate
-```
-check  address
-```
-Main.address
-```
-instantiate
-```
-let instance = await Main.deployed()
+migrate
 ```
 ```
-instance.<method>()
-```
-access ethereum by web3 api
-```
-web3.eth.getBlockNumber()
-```
-```
-web3.eth.getBlock(2)
-```
-
-run server
-```
-npm run dev
+Main.deployed().then((obj) => { a = obj; })
 ```

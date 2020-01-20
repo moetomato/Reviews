@@ -15,7 +15,7 @@ contract Main {
       string reviewer;
       string reviewee;
       uint score;
-      string sentence;
+      string comment;
       mapping(address => bool) checkerToApproval;
       Checker checker1;
       Checker checker2;
